@@ -33,16 +33,14 @@ class CardComponents {
     fun CardView(dataModel: DataModel, modifier: Modifier = Modifier) {
         Card(modifier = modifier) {
             Row {
-                Box {
-                    Image(
-                        painter = painterResource(dataModel.imageResourceId),
-                        contentDescription = stringResource(dataModel.stringResourceId),
-                        modifier = modifier
-                            .size(width = 68.dp, height = 68.dp)
-                            .aspectRatio(1f),
-                        contentScale = ContentScale.Crop
-                    )
-                }
+                Image(
+                    painter = painterResource(dataModel.imageResourceId),
+                    contentDescription = stringResource(dataModel.stringResourceId),
+                    modifier = modifier
+                        .size(width = 68.dp, height = 68.dp)
+                        .aspectRatio(1f),
+                    contentScale = ContentScale.Crop
+                )
                 Column {
                     Text(
                         text = LocalContext.current.getString(dataModel.stringResourceId),
